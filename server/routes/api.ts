@@ -6,7 +6,7 @@ const router = express.Router();
 class MoviesController {
     findAll(req: express.Request, res: express.Response, next: express.NextFunction) {
         const movie = Movie.find({}).then((movies) => {
-            res.send(200, movies);
+            res.json(movies);
         }, (err) => {
             res.send(500, err);
         });
@@ -15,7 +15,7 @@ class MoviesController {
         const id = req.params.id;
         console.log('Retrieving movie: ' + id);
         const movie = Movie.findById(id).then((movie) => {
-            res.send(200, movie);
+            res.json(movie);
         }, (err) => {
             res.send(500, err);
         });
@@ -25,7 +25,7 @@ class MoviesController {
         console.log('Adding movie: ' + JSON.stringify(movie));
         new Movie(movie).save()
             .then((movie) => {
-                res.send(200, movie);
+                res.json(movie);
             }, (err) => {
                 console.log('Error adding movie: ' + err);
                 res.send(500, err);
@@ -37,7 +37,7 @@ class MoviesController {
         console.log('Updating movie: ' + id);
         Movie.findByIdAndUpdate(id, movie)
             .then((movie) => {
-                res.send(200, movie);
+                res.json(movie);
             }, (err) => {
                 console.log('Error updating movie: ' + err);
                 res.send(500, err);
@@ -48,7 +48,7 @@ class MoviesController {
         console.log('Deleting movie: ' + id);
         Movie.findByIdAndRemove(id)
             .then((movie) => {
-                res.send(200, movie);
+                res.json(movie);
             }, (err) => {
                 console.log('Error removing movie: ' + err);
                 res.send(500, err);
