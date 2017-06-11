@@ -42,6 +42,5 @@ testem.log
 Thumbs.db
 
 
-server/**/*.js
 server/**/*.js.map
 .env
