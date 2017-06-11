@@ -2,12 +2,8 @@
   "name": "sms-api",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "start": "node server.js"
-  },
   "engines": {
-    "node": ">4.4 < 8",
-    "npm": ">3"
+    "node": "^7.0.0"
   },
   "license": "MIT",
   "dependencies": {
