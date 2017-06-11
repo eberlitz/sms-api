@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "tsc -p . && node index.js",
-    "reinstall": "rm -rf node_modules && npm i"
+    "start": "node server.js"
   },
   "engines": {
     "node": ">4.4 < 8",
