@@ -6,5 +6,7 @@
         "moduleResolution": "node"
     },
     "compileOnSave": true,
-    "exclude": []
+    "exclude": [
+        "node_modules"
+    ]
 }
