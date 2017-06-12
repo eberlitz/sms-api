@@ -95,7 +95,7 @@ function addToQueue(fn) {
             }
             process();
         });
-    }, 1000);
+    }, 400);
 })();
 class MoviesController {
     findAll(req, res, next) {
