@@ -85,7 +85,7 @@ async function addToQueue(fn: () => Promise<any>) {
             console.log(err);
         }
         process();
-    }, 1000);
+    }, 400);
 })();
 
 
