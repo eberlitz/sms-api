@@ -95,7 +95,7 @@ function addToQueue(fn) {
             }
             process();
         });
-    }, 1900);
+    }, 100);
 })();
 class MoviesController {
     findAll(req, res, next) {
@@ -113,10 +113,12 @@ class MoviesController {
         addToQueue(() => {
             // return Movie.findById(id).then((movie) => {
             return new Promise((resolve) => {
-                res.json({
-                    abra: 'cadabra'
-                });
-                resolve();
+                setTimeout(function () {
+                    res.json({
+                        abra: 'cadabra'
+                    });
+                    resolve();
+                }, 1800);
             });
             // }, (err) => {
             // res.send(500, err);
