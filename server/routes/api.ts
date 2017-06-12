@@ -85,7 +85,7 @@ async function addToQueue(fn: () => Promise<any>) {
             console.log(err);
         }
         process();
-    }, 400);
+    }, 1900);
 })();
 
 
@@ -103,11 +103,16 @@ class MoviesController {
         const id = req.params.id;
         console.log('Retrieving movie: ' + id);
         addToQueue(() => {
-            return Movie.findById(id).then((movie) => {
-                res.json(movie);
-            }, (err) => {
-                res.send(500, err);
+            // return Movie.findById(id).then((movie) => {
+            return new Promise((resolve) => {
+                res.json({
+                    abra: 'cadabra'
+                });
+                resolve();
             });
+            // }, (err) => {
+            // res.send(500, err);
+            // });
         });
     }
     add(req: express.Request, res: express.Response, next: express.NextFunction) {
